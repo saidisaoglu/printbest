@@ -1,0 +1,26 @@
+@import "../../VariableElements/Responsive.scss";
+@import "../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+
+.contactElement {
+  padding: 24px 20px;
+  background-color: $white_color;
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  @include responsive992 {
+    padding: 24px 0;
+  }
+}

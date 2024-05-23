@@ -1,0 +1,74 @@
+@import "../../VariableElements/Responsive.scss";
+@import "../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+.myOrder {
+  padding: 24px 20px;
+  .myOrderTexts {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    span {
+      color: #022b9e;
+      font-family: "RobotoBold";
+      font-size: 16px;
+      font-style: normal;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+      @include responsive992 {
+        font-size: 24px;
+      }
+    }
+    h2 {
+      color: $black_color;
+      font-family: "RobotoMedium";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      max-width: 380px;
+      @include responsive992 {
+        font-size: 36px;
+        max-width: 750px;
+      }
+    }
+    p {
+      color: #424242;
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+    }
+  }
+  .myOrderInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  button {
+    color: white;
+    border: none;
+    width: 280px;
+    height: 41.674px;
+    padding: 7.814px 6.512px;
+    gap: 6.512px;
+    border-radius: 2.605px;
+    background: var(
+      --primary,
+      linear-gradient(96deg, #1e59cb 6.44%, #3e72d8 95.69%)
+    );
+  }
+}

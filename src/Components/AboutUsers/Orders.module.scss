@@ -1,0 +1,100 @@
+@import "../../VariableElements/Responsive.scss";
+@import "../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+
+.ordersPart {
+  padding: 24px 20px;
+  @include responsive768 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 24px 0;
+  }
+  .ordersTexts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    margin-bottom: 20px;
+    h1 {
+      color: #022b9e;
+      font-family: "RobotoBold";
+      font-size: 16px;
+      font-style: normal;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+      @include responsive992 {
+        font-size: 24px;
+      }
+    }
+    p {
+      color: $black_color;
+      font-family: "RobotoMedium";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      max-width: 380px;
+      @include responsive992 {
+        font-size: 36px;
+        max-width: 750px;
+      }
+    }
+    h2 {
+      color: #59616b;
+      text-align: center;
+      font-family: "RobotoMedium";
+      font-size: 24px;
+    }
+  }
+  .ordersTable {
+    margin: 20px 0;
+    table {
+      display: flex;
+      justify-content: center;
+      line-height: 25px;
+      @include responsive992 {
+        flex-direction: column;
+      }
+      tr {
+        display: flex;
+        flex-direction: column;
+        @include responsive992 {
+          flex-direction: row;
+          justify-content: center;
+        }
+        th,
+        td {
+          display: flex;
+          flex-direction: column;
+          color: #59616b;
+          font-size: 16px;
+          font-weight: 600;
+          border-right: 1px solid #d9d9d9;
+          padding: 12px;
+          height: 60px;
+          @include responsive992 {
+            width: 20%;
+          }
+        }
+        td {
+          color: #6e7987;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

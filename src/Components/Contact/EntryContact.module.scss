@@ -1,0 +1,277 @@
+@import "../../VariableElements/Responsive.scss";
+@import "../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+
+.entryContactContainer {
+  .entryContactElement {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    @include responsive768 {
+      width: 90%;
+      margin: 0 auto;
+      padding: 24px 0;
+      flex-direction: unset;
+      justify-content: center;
+    }
+    @include responsive1300 {
+      gap: 70px;
+      padding: 64px 0;
+    }
+    .leftSide {
+      @include responsive768 {
+        width: 40%;
+      }
+      @include responsive992 {
+        width: 35%;
+      }
+      @include responsive1300 {
+        width: 430px;
+      }
+      .textElement {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+        margin-bottom: 44px;
+        h1 {
+          color: #022b9e;
+          font-family: "RobotoBold";
+          font-size: 16px;
+          font-style: normal;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          @include responsive992 {
+            font-size: 24px;
+          }
+        }
+        p {
+          color: $black_color;
+          font-family: "RobotoMedium";
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          @include responsive992 {
+            font-size: 24px;
+          }
+          @include responsive1200 {
+            font-size: 28px;
+          }
+          @include responsive1300 {
+            font-size: 36px;
+          }
+        }
+      }
+      form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        @include responsive992 {
+          gap: 28px;
+        }
+        @include responsive1300 {
+          gap: 35px;
+        }
+        div {
+          input {
+            border-radius: 3px;
+            border: 0.6px solid #bdbdbd;
+            background-color: $white-color;
+            padding: 14px;
+            width: 100%;
+            font-size: 14px;
+            font-family: "Roboto";
+            @include responsive992 {
+              padding: 18px;
+            }
+            @include responsive1300 {
+              padding: 20px;
+              font-size: 16px;
+            }
+          }
+          label {
+            position: absolute;
+            transform: translate(20px, -10px);
+            z-index: 1;
+            background-color: white;
+            padding: 0 5px;
+            color: #757575;
+            font-size: 14px;
+            font-family: "RobotoMedium";
+            @include responsive1300 {
+              font-size: 16px;
+            }
+          }
+        }
+        .submitButton {
+          input {
+            border-radius: 5px;
+            background-color: #1e59cb;
+            color: $white-color;
+            font-family: "RobotoMedium";
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover {
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+            @include responsive768 {
+              font-size: 16px;
+            }
+            @include responsive992 {
+              font-size: 18px;
+            }
+            @include responsive1300 {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    .rightSide {
+      @include responsive768 {
+        width: 60%;
+      }
+      @include responsive992 {
+        width: 80%;
+      }
+      @include responsive1300 {
+        width: 70%;
+      }
+      h2 {
+        color: $black_color;
+        font-family: "RobotoMedium";
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        margin-bottom: 12px;
+        @include responsive992 {
+          font-size: 20px;
+          margin-bottom: 16px;
+        }
+        @include responsive1300 {
+          font-size: 24px;
+          margin-bottom: 24px;
+        }
+      }
+      article {
+        color: #616161;
+        font-family: "Roboto";
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        margin-bottom: 32px;
+        @include responsive992 {
+          font-size: 15px;
+          margin-bottom: 42px;
+        }
+        @include responsive1300 {
+          font-size: 16px;
+        }
+      }
+      .contactInformations {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        list-style: none;
+        margin-bottom: 32px;
+        @include responsive992 {
+          margin-bottom: 42px;
+        }
+        li {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          @include responsive992 {
+            flex-direction: unset;
+          }
+          div {
+            p {
+              color: $black_color;
+              font-family: "Roboto";
+              font-size: 14px;
+              line-height: 140%;
+              letter-spacing: 0.2px;
+              @include responsive992 {
+                font-size: 16px;
+              }
+              @include responsive1300 {
+                font-size: 18px;
+              }
+              span {
+                color: $black_color;
+                font-family: "RobotoMedium";
+                font-size: 14px;
+                line-height: 140%;
+                letter-spacing: 0.2px;
+                @include responsive992 {
+                  font-size: 16px;
+                }
+                @include responsive1300 {
+                  font-size: 18px;
+                }
+              }
+            }
+            &:first-child {
+              @include responsive992 {
+                width: 300px;
+              }
+              @include responsive1300 {
+                width: 350px;
+              }
+            }
+          }
+        }
+      }
+      .sosialNetwork {
+        margin: 26px 0;
+        list-style: none;
+        display: flex;
+        gap: 16px;
+        li {
+          a {
+            text-decoration: none;
+            img {
+              width: 24px;
+              @include responsive1200 {
+                width: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .mapContainer {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    display: none;
+    @include responsive992 {
+      display: block;
+    }
+    .mapElement {
+      width: 100%;
+      height: 400px;
+      @include responsive1200 {
+        height: 500px;
+      }
+    }
+  }
+}

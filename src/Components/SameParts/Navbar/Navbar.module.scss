@@ -1,0 +1,607 @@
+@import "../../../VariableElements/Responsive.scss";
+@import "../../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.header {
+  background-image: url("../../../Images/homePageNavbar.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 33px 0 5px 0;
+  @include responsive992 {
+    padding: 0;
+  }
+}
+header {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  z-index: 100;
+  .loginPart {
+    display: none;
+    @include responsive992 {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+    }
+    .contactInformations {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 22px;
+      li {
+        display: flex;
+        align-items: center;
+        figure {
+          height: 25px;
+          margin: 0;
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+        a {
+          color: $black_color;
+          font-family: "Roboto";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          text-decoration: none;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          list-style: none;
+          gap: 5px;
+        }
+      }
+      .phoneElement {
+        cursor: pointer;
+        .whiteColor {
+          color: $white_color;
+        }
+        .blackColor {
+          color: $black_color;
+        }
+      }
+      .mailElement {
+        gap: 5px;
+        cursor: pointer;
+        .whiteColor {
+          color: $white_color;
+        }
+        .blackColor {
+          color: $black_color;
+        }
+      }
+      .sosialAndLangElements {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        .sosialNetworkElement {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          li {
+            cursor: pointer;
+            padding-top: 3px;
+          }
+        }
+        .langElement {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          cursor: pointer;
+          p {
+            font-family: "RobotoMedium";
+            font-size: 12px;
+            font-style: normal;
+            line-height: 140%;
+            letter-spacing: 0.2px;
+          }
+          .whiteColor {
+            color: $white_color;
+            margin: 0;
+          }
+          .blackColor {
+            color: $black_color;
+          }
+          .arrowElement {
+            height: 10px;
+            display: flex;
+            align-items: start;
+            img {
+              width: 10px;
+              height: 10px;
+            }
+          }
+        }
+      }
+    }
+    .userElement {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      list-style: none;
+      position: relative;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        cursor: pointer;
+        .arrow {
+          img {
+            width: 10px;
+            height: 10px;
+          }
+        }
+        a {
+          font-family: "Roboto";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          text-decoration: none;
+          color: $black_color;
+          cursor: pointer;
+          &:after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 0; //js kodunda bunu 100% edende secilmis kimi olacaq
+            left: 0;
+            bottom: -10px;
+            transition: 0.3s;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+        .whiteColor {
+          color: $white_color;
+          &:after {
+            background-color: $white_color;
+          }
+        }
+        .blackColor {
+          color: $black_color;
+          &:after {
+            background-color: $black_color;
+          }
+        }
+      }
+      li {
+        .userImage {
+          height: 24px;
+          cursor: pointer;
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+  .navbar {
+    margin: 0 auto;
+    @include responsive992 {
+      margin: 5px auto;
+      gap: 10px;
+    }
+  }
+  nav {
+    width: 90%;
+    margin: 33px auto 5px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include responsive992 {
+      margin: 5px auto;
+      gap: 10px;
+    }
+    .logoElement {
+      img {
+        width: 120px;
+        cursor: pointer;
+        @include responsive992 {
+          width: 155px;
+        }
+      }
+    }
+    .searchAndMenuElements {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      @include responsive992 {
+        display: none;
+      }
+      li:first-child {
+        img {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+        }
+        .searchImage {
+          display: block;
+        }
+        .searchImageHidden {
+          display: none;
+        }
+        .searchInput {
+          position: relative;
+          margin-left: 10px;
+          input {
+            width: 120px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #424242;
+            padding: 6px 24px 6px 12px;
+            &::placeholder {
+              color: $black_color;
+            }
+          }
+          .searchImageInInput {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            img {
+              width: 16px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      li:last-child {
+        img {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+        }
+      }
+    }
+    .menuList {
+      display: none;
+      @include responsive992 {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 10px;
+      }
+      @include responsive1100 {
+        gap: 24px;
+      }
+      li {
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: $black_color;
+          font-family: "Roboto";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          position: relative;
+          @include responsive1200 {
+            padding: 0 10px;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 0; //js kodunda bunu 100% edende secilmis kimi olacaq
+            left: 0;
+            bottom: -10px;
+            transition: 0.3s;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+        .whiteColor {
+          color: $white_color;
+          &:after {
+            background-color: $white_color;
+          }
+        }
+        .blackColor {
+          color: $black_color;
+          &:after {
+            background-color: $black_color;
+          }
+        }
+      }
+    }
+    .searchAndOrderElements {
+      display: none;
+      @include responsive992 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      @include responsive1100 {
+        gap: 24px;
+      }
+      .searchInput {
+        position: relative;
+        input {
+          border-radius: 5px;
+          padding: 6px 24px 6px 12px;
+          background-color: transparent;
+        }
+        .whiteColor {
+          border: 1px solid $white_color;
+          color: $white_color;
+          &::placeholder {
+            color: $white_color;
+          }
+          &:hover {
+            border: 1px solid #424242;
+          }
+          &:hover::placeholder {
+            color: $black_color;
+          }
+        }
+        .blackColor {
+          border: 1px solid #424242;
+          &::placeholder {
+            color: $black_color;
+          }
+        }
+        .searchImageInInput {
+          position: absolute;
+          top: 8px;
+          right: 12px;
+          img {
+            width: 16px;
+            cursor: pointer;
+          }
+          .blackSearch {
+            display: none;
+          }
+        }
+        &:hover .whiteSearch {
+          display: none;
+        }
+        &:hover .blackSearch {
+          display: block;
+        }
+      }
+      .orderButton {
+        cursor: pointer;
+        padding: 8px 24px;
+        border-radius: 4px;
+        background: #022b9e;
+        color: $white_color;
+        font-family: "Roboto";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        text-decoration: none;
+      }
+    }
+  }
+  .imageElement {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    .skyElement {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 138px;
+      }
+    }
+    .cloudElement {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      width: 100%;
+      animation: slide 5s linear infinite;
+      display: flex;
+      gap: 1000px;
+      @include responsive768 {
+        animation: slide 10s linear infinite;
+      }
+      @include responsive992 {
+        animation: slide 15s linear infinite;
+      }
+      img {
+        width: 300px;
+      }
+    }
+    .textElement {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 5px;
+      p {
+        color: $white_color;
+        font-family: "Roboto";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        font-size: 16px;
+        @include responsive992 {
+          font-size: 24px;
+        }
+        &:last-child {
+          font-weight: 700;
+          font-family: "RobotoBold";
+        }
+      }
+    }
+  }
+  .otherContainer {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    .cloudContainer {
+      position: absolute;
+      top: 55px;
+      right: 0;
+      width: 100%;
+      animation: slide 5s linear infinite;
+      display: flex;
+      gap: 1000px;
+      z-index: -1;
+      @include responsive768 {
+        animation: slide 10s linear infinite;
+      }
+      @include responsive992 {
+        animation: slide 15s linear infinite;
+      }
+      @include responsive1200 {
+        top: 180px;
+      }
+      img {
+        width: 400px;
+        @include responsive992 {
+          width: 1000px;
+        }
+      }
+    }
+    .otherElement {
+      width: 80%;
+      margin: 60px auto;
+      @include responsive992 {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+      }
+      .textElements {
+        @include responsive992 {
+          width: 50%;
+        }
+        h1 {
+          color: $white_color;
+          font-family: "RobotoMedium";
+          font-size: 24px;
+          line-height: 141%;
+          margin-bottom: 16px;
+          @include responsive992 {
+            font-size: 34px;
+            margin-bottom: 30px;
+          }
+          @include responsive1200 {
+            font-size: 44px;
+            margin-bottom: 52px;
+          }
+        }
+        p {
+          color: #e0e0e0;
+          font-family: "Roboto";
+          font-size: 16px;
+          line-height: 120%;
+          margin-bottom: 40px;
+          @include responsive992 {
+            width: 80%;
+            font-size: 18px;
+            margin-bottom: 45px;
+          }
+          @include responsive1200 {
+            font-size: 20px;
+            margin-bottom: 57px;
+          }
+        }
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            color: $white_color;
+            font-family: "RobotoMedium";
+            font-size: 14px;
+            @include responsive992 {
+              font-size: 16px;
+              height: 50px;
+              padding: 10px;
+            }
+            @include responsive1200 {
+              font-size: 20px;
+            }
+          }
+          a:first-child {
+            padding: 12px 30px;
+            border: 1px solid $white_color;
+            transition: all 0.3s ease;
+            &:hover {
+              background-color: #e9e9e92a;
+            }
+          }
+          a:last-child {
+            padding: 8px 24px;
+            background: #022b9e;
+            @include responsive992 {
+              display: none;
+            }
+          }
+        }
+      }
+      .imageContainer {
+        display: none;
+        list-style: none;
+        @include responsive992 {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          li:first-child {
+            width: 35%;
+            img {
+              width: 100%;
+            }
+          }
+          li:last-child {
+            width: 65%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

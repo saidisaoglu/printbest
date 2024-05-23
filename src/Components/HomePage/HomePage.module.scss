@@ -1,0 +1,800 @@
+@import "../../VariableElements/Responsive.scss";
+@import "../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+
+.homePagePart1 {
+  padding: 24px 20px;
+  @include responsive768 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 64px 0;
+  }
+  //   ------------servicesPart----------------
+  .servicesTexts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    .headerText {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        color: #022b9e;
+        font-family: "RobotoBold";
+        font-size: 16px;
+        font-style: normal;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        @include responsive992 {
+          font-size: 24px;
+        }
+      }
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        width: 100px;
+        height: 40px;
+        padding: 11px 8px;
+        border-radius: 3px;
+        border: 0.7px solid #bdbdbd;
+        color: $black_color;
+        font-family: "Roboto";
+        font-size: 11px;
+        line-height: 140%;
+        letter-spacing: 0.136px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        @include responsive768 {
+          font-size: 14px;
+          width: 138px;
+          height: 50px;
+        }
+        @include responsive992 {
+          font-size: 16px;
+          width: 148px;
+          height: 54px;
+        }
+      }
+    }
+    p {
+      color: $black_color;
+      font-family: "RobotoMedium";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      max-width: 380px;
+      @include responsive992 {
+        font-size: 36px;
+        max-width: 750px;
+      }
+    }
+  }
+  .servicesCards {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin: 30px auto 64px auto;
+    @include responsive992 {
+      gap: 55px;
+    }
+    @include responsive1200 {
+      width: 1050px;
+      gap: 60px;
+    }
+    @include responsive1440 {
+      justify-content: space-between;
+      width: 100%;
+    }
+    @include responsive1800 {
+      width: 1600px;
+    }
+    li {
+      position: relative;
+      div {
+        width: 280px;
+        height: 261px;
+        border-radius: 15px;
+        cursor: pointer;
+        overflow: hidden;
+        @include responsive1200 {
+          width: 300px;
+          height: 300px;
+          margin-bottom: 10px;
+        }
+        @include responsive1440 {
+          width: 380px;
+          height: 380px;
+        }
+        img {
+          width: 100%;
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          @include responsive1200 {
+            height: 300px;
+          }
+          @include responsive1440 {
+            height: 380px;
+          }
+        }
+        &:hover img {
+          transform: scale(1.2);
+        }
+      }
+      a {
+        position: absolute;
+        width: 154px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        background-color: #022b9e;
+        color: $white_color;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 0;
+        font-family: "RobotoMedium";
+        font-size: 16px;
+        line-height: 110%;
+        @include responsive992 {
+          bottom: -40px;
+          left: 0;
+          transform: translateX(0);
+          border-radius: 0;
+          padding: 0;
+          background-color: unset;
+          text-align: start;
+          color: $black_color;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+//   ------------portfolioPart----------------
+.homePageContainer {
+  width: 100%;
+  background: #e0eeff;
+  position: relative;
+  .triangleImage1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    img {
+      width: 30px;
+      @include responsive992 {
+        top: 10px;
+        width: 70px;
+      }
+    }
+  }
+  .triangleImage2 {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    img {
+      width: 70px;
+      transform: scale(-1);
+      transform: scaleX(-1);
+      @include responsive992 {
+        width: 120px;
+      }
+    }
+  }
+  .otherOurWorks {
+    width: 100%;
+    padding: 24px 20px;
+    @include responsive768 {
+      width: 90%;
+      margin: 0 auto;
+      padding: 51px 0;
+    }
+    .onlyText {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      p {
+        color: #022b9e;
+        font-family: "RobotoBold";
+        font-size: 16px;
+        font-style: normal;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        @include responsive992 {
+          font-size: 24px;
+        }
+      }
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        width: 100px;
+        height: 40px;
+        padding: 11px 8px;
+        border-radius: 3px;
+        border: 0.7px solid #9b9b9b;
+        color: $black_color;
+        font-family: "Roboto";
+        font-size: 11px;
+        line-height: 140%;
+        letter-spacing: 0.136px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        @include responsive768 {
+          font-size: 14px;
+          width: 138px;
+          height: 50px;
+        }
+        @include responsive992 {
+          font-size: 16px;
+          width: 148px;
+          height: 54px;
+        }
+      }
+    }
+    .text {
+      color: $black_color;
+      font-family: "RobotoMedium";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      max-width: 380px;
+      margin-bottom: 20px;
+      @include responsive992 {
+        font-size: 36px;
+        max-width: 750px;
+        margin-bottom: 37px;
+      }
+    }
+  }
+  // --------autoSLider----------
+  .upSideContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .downSliderContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .container {
+    .upSideContainer {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      box-sizing: border-box;
+      overflow: scroll;
+      &.paused {
+        .upSliderContainer {
+          animation-play-state: paused;
+        }
+        .downSliderContainer {
+          animation-play-state: paused;
+        }
+      }
+      .upSliderContainer {
+        display: flex;
+        justify-content: space-around;
+        animation: upSliderShow 70s infinite linear;
+        position: relative;
+        margin-bottom: 15px;
+        @keyframes upSliderShow {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        @include responsive992 {
+          margin-top: 0;
+        }
+        .upSlider {
+          width: 250px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          transition: transform 0.5s ease;
+          p {
+            color: #424242;
+            font-family: "Lexend";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      .downSliderContainer {
+        display: flex;
+        justify-content: space-around;
+        animation: downSliderShow 70s infinite linear;
+        position: relative;
+        margin-bottom: 50px;
+        @keyframes downSliderShow {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+        .upSlider {
+          width: 250px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          transition: transform 0.5s ease;
+          p {
+            color: #424242;
+            font-family: "Lexend";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+// --------aboutUs----------
+.homePagePart2 {
+  padding: 32px 20px;
+  @include responsive768 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 64px 0;
+  }
+  .aboutUsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    @include responsive992 {
+      max-height: 500px;
+      flex-direction: unset;
+      justify-content: space-between;
+      gap: 50px;
+    }
+    .aboutUsText {
+      @include responsive992 {
+        width: 50%;
+      }
+      @include responsive1200 {
+        width: 40%;
+      }
+      p:first-child {
+        color: #022b9e;
+        font-family: "RobotoBold";
+        font-size: 16px;
+        font-style: normal;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        margin-bottom: 12px;
+        @include responsive992 {
+          font-size: 24px;
+        }
+      }
+      p:nth-child(2) {
+        color: $black_color;
+        font-family: "RobotoMedium";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        max-width: 380px;
+        margin-bottom: 23px;
+        @include responsive992 {
+          font-size: 24px;
+          max-width: 750px;
+          margin-bottom: 33px;
+        }
+        @include responsive1200 {
+          font-size: 34px;
+          margin-bottom: 40px;
+        }
+      }
+      p:nth-child(3) {
+        color: #272828;
+        font-family: "Roboto";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        margin-bottom: 20px;
+        @include responsive992 {
+          margin-bottom: 30px;
+          font-size: 16px;
+        }
+        @include responsive1200 {
+          margin-bottom: 40px;
+        }
+      }
+      a {
+        display: flex;
+        width: 100px;
+        height: 40px;
+        padding: 12px 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        border: 1px solid #022b9e;
+        background-color: #022b9e;
+        color: $white_color;
+        text-align: center;
+        font-family: "RobotoMedium";
+        font-size: 14px;
+        line-height: 130%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        @include responsive992 {
+          font-size: 16px;
+          width: 130px;
+          height: 45px;
+        }
+        @include responsive1200 {
+          font-size: 20px;
+          width: 150px;
+          height: 57px;
+        }
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+      }
+    }
+    .aboutUsImage {
+      width: 100%;
+      @include responsive992 {
+        width: 50%;
+      }
+      @include responsive1200 {
+        width: 60%;
+      }
+      img {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+// --------companies-in-home-page----------
+.homePagePart3 {
+  padding: 24px 20px;
+  @include responsive768 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 64px 0;
+  }
+  @include responsive992 {
+    padding-bottom: 92px;
+  }
+  .companiesInHomePageContainer {
+    width: 100%;
+    .companiesTextElement {
+      width: 100%;
+      .companiesOnlyText {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        p {
+          color: #022b9e;
+          font-family: "RobotoBold";
+          font-size: 16px;
+          font-style: normal;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          @include responsive992 {
+            font-size: 24px;
+          }
+        }
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          width: 100px;
+          height: 40px;
+          padding: 11px 8px;
+          border-radius: 3px;
+          border: 0.7px solid #9b9b9b;
+          color: $black_color;
+          font-family: "Roboto";
+          font-size: 11px;
+          line-height: 140%;
+          letter-spacing: 0.136px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          &:hover {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+          @include responsive768 {
+            font-size: 14px;
+            width: 138px;
+            height: 50px;
+          }
+          @include responsive992 {
+            font-size: 16px;
+            width: 148px;
+            height: 54px;
+          }
+        }
+      }
+      .companiesTexts {
+        color: $black_color;
+        font-family: "RobotoMedium";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        max-width: 380px;
+        margin-bottom: 20px;
+        @include responsive992 {
+          font-size: 36px;
+          max-width: 750px;
+          margin-bottom: 37px;
+        }
+      }
+    }
+    .companiesCardElement {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      @include responsive768 {
+        flex-direction: unset;
+        justify-content: space-between;
+        gap: 50px;
+      }
+      .card {
+        width: 100%;
+        position: relative;
+        @include responsive768 {
+          width: 50%;
+        }
+        .image {
+          width: 100%;
+          border-radius: 20px;
+          img {
+            width: 100%;
+            border-radius: 20px;
+            @include responsive1550 {
+              width: 700px;
+              height: 360px;
+            }
+          }
+        }
+        .texts {
+          position: absolute;
+          top: 15%;
+          left: 20px;
+          @include responsive1200 {
+            top: 20%;
+            left: 25px;
+          }
+          p {
+            color: $white_color;
+            font-family: "RobotoMedium";
+            font-size: 8px;
+            line-height: 140%;
+            letter-spacing: 0.084px;
+            margin-bottom: 4px;
+            @include responsive400 {
+              font-size: 10px;
+              margin-bottom: 6px;
+            }
+            @include responsive450 {
+              font-size: 12px;
+              margin-bottom: 8px;
+            }
+            @include responsive500 {
+              font-size: 14px;
+              margin-bottom: 10px;
+            }
+            @include responsive600 {
+              font-size: 16px;
+              margin-bottom: 13px;
+            }
+            @include responsive768 {
+              font-size: 10px;
+              margin-bottom: 6px;
+            }
+            @include responsive860 {
+              font-size: 12px;
+              margin-bottom: 8px;
+            }
+            @include responsive992 {
+              font-size: 14px;
+              margin-bottom: 10px;
+            }
+            @include responsive1200 {
+              font-size: 16px;
+              margin-bottom: 13px;
+            }
+          }
+          h3 {
+            color: $white_color;
+            font-family: "RobotoMedium";
+            font-size: 16px;
+            line-height: 140%;
+            letter-spacing: 0.084px;
+            margin-bottom: 4px;
+            @include responsive400 {
+              font-size: 18px;
+              margin-bottom: 6px;
+            }
+            @include responsive450 {
+              font-size: 22px;
+              margin-bottom: 8px;
+            }
+            @include responsive500 {
+              font-size: 24px;
+              margin-bottom: 10px;
+            }
+            @include responsive600 {
+              font-size: 26px;
+              margin-bottom: 13px;
+            }
+            @include responsive700 {
+              font-size: 30px;
+            }
+            @include responsive768 {
+              font-size: 18px;
+              margin-bottom: 6px;
+            }
+            @include responsive860 {
+              font-size: 22px;
+              margin-bottom: 8px;
+            }
+            @include responsive992 {
+              font-size: 24px;
+              margin-bottom: 10px;
+            }
+            @include responsive1200 {
+              font-size: 26px;
+              margin-bottom: 13px;
+            }
+            @include responsive1300 {
+              font-size: 30px;
+            }
+            @include responsive1440 {
+              font-size: 36px;
+            }
+          }
+          h2 {
+            color: #fff;
+            font-family: "RobotoMedium";
+            font-size: 16px;
+            line-height: 140%;
+            letter-spacing: 0.084px;
+            margin-bottom: 14px;
+            @include responsive400 {
+              font-size: 18px;
+              margin-bottom: 16px;
+            }
+            @include responsive450 {
+              font-size: 22px;
+              margin-bottom: 18px;
+            }
+            @include responsive500 {
+              font-size: 24px;
+              margin-bottom: 20px;
+            }
+            @include responsive600 {
+              font-size: 26px;
+              margin-bottom: 22px;
+            }
+            @include responsive700 {
+              font-size: 30px;
+            }
+            @include responsive768 {
+              font-size: 18px;
+              margin-bottom: 16px;
+            }
+            @include responsive860 {
+              font-size: 22px;
+              margin-bottom: 18px;
+            }
+            @include responsive992 {
+              font-size: 24px;
+              margin-bottom: 20px;
+            }
+            @include responsive1200 {
+              font-size: 26px;
+              margin-bottom: 22px;
+            }
+            @include responsive1300 {
+              font-size: 30px;
+              margin-bottom: 26px;
+            }
+            @include responsive1440 {
+              font-size: 36px;
+              margin-bottom: 32px;
+            }
+          }
+          a {
+            border-radius: 3px;
+            border: 0.6px solid $white_color;
+            color: $white_color;
+            text-align: center;
+            font-family: "RobotoMedium";
+            font-size: 9px;
+            line-height: 130%;
+            padding: 8px 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            &:hover {
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+            @include responsive400 {
+              font-size: 11px;
+            }
+            @include responsive450 {
+              font-size: 13px;
+            }
+            @include responsive500 {
+              font-size: 15px;
+            }
+            @include responsive600 {
+              font-size: 16px;
+            }
+            @include responsive768 {
+              font-size: 11px;
+            }
+            @include responsive860 {
+              font-size: 13px;
+            }
+            @include responsive992 {
+              font-size: 15px;
+            }
+            @include responsive1200 {
+              font-size: 16px;
+              padding: 10px 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+@import "../../VariableElements/Color.scss";
+@import "../../VariableElements/Responsive.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.481);
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .element {
+    z-index: 200;
+    border-radius: 24px;
+    background: white;
+    padding: 15px 30px 20px 30px;
+    .xIcon {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      div {
+        img {
+          width: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    // ------------login----------------
+    .loginAndRegistered {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 40px;
+      margin-top: 15px;
+      p {
+        font-family: "Roboto";
+        color: #212121;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        position: relative;
+        padding: 0 10px;
+        font-family: "RobotoMedium";
+        cursor: pointer;
+        &:after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 0; //js kodunda bunu 100% edende secilmis kimi olacaq
+          left: 0;
+          bottom: -10px;
+          transition: 0.3s;
+          background-color: $black_color;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+      .activeLogin:after {
+        width: 100%;
+      }
+      .activeRegistered:after {
+        width: 100%;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+      input {
+        width: 250px;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #212121;
+        color: #212121;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        font-family: "Roboto";
+        &:hover {
+          border-color: rgb(0, 54, 233);
+        }
+        &:hover::placeholder {
+          color: rgb(0, 54, 233);
+        }
+        @include responsive768 {
+          width: 288px;
+        }
+      }
+      .loginEntered {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 24px;
+        .forgotText {
+          color: #757575;
+          font-family: "RobotoMedium";
+          font-size: 14px;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          &:hover {
+            text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.75);
+          }
+        }
+        .back {
+          padding: 6px 24px;
+          border-radius: 4px;
+          border: 1px solid rgb(140, 140, 140);
+          color: $white_color;
+          font-family: "RobotoMedium";
+          font-size: 16px;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          background-color: rgb(140, 140, 140);
+          &:hover {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+        }
+        .entryButton {
+          width: 120px;
+          padding: 6px 24px;
+          border-radius: 4px;
+          border: 1px solid #212121;
+          color: #212121;
+          font-family: "RobotoMedium";
+          font-size: 16px;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          background-color: white;
+          &:hover {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+        }
+      }
+    }
+    // ------------registered----------------
+    .registeredInputs {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+      input {
+        width: 250px;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #212121;
+        color: #212121;
+        font-family: "Roboto";
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        &:hover {
+          border-color: rgb(0, 54, 233);
+        }
+        &:hover::placeholder {
+          color: rgb(0, 54, 233);
+        }
+        @include responsive768 {
+          width: 288px;
+        }
+      }
+      .registeredEntered {
+        display: flex;
+        justify-content: end;
+        .entryButton {
+          width: 120px;
+          padding: 6px 24px;
+          border-radius: 4px;
+          border: 1px solid #212121;
+          color: #212121;
+          font-family: "RobotoMedium";
+          font-size: 16px;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          background-color: white;
+          cursor: pointer;
+          &:hover {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  .element {
+    background-color: white;
+    position: relative;
+    z-index: 20;
+    width: 100%;
+  }
+}

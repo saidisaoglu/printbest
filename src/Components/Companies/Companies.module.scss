@@ -1,0 +1,294 @@
+@import "../../VariableElements/Responsive.scss";
+@import "../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+
+.entryCompaniesContainer {
+  padding: 24px 20px;
+  @include responsive768 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 24px 0;
+  }
+  .textElement {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    margin-bottom: 44px;
+    h1 {
+      color: #022b9e;
+      font-family: "RobotoBold";
+      font-size: 16px;
+      font-style: normal;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+      @include responsive992 {
+        font-size: 24px;
+      }
+    }
+    p {
+      color: $black_color;
+      font-family: "RobotoMedium";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      max-width: 360px;
+      @include responsive992 {
+        font-size: 36px;
+        max-width: 900px;
+      }
+    }
+    article {
+      color: #424242;
+      font-family: "Roboto";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+      @include responsive992 {
+        font-size: 16px;
+      }
+    }
+  }
+  .companiesCards {
+    list-style: none;
+    li {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      // margin: 0 auto;
+      margin-bottom: 32px;
+      @include responsive768 {
+        flex-direction: unset;
+        justify-content: space-between;
+      }
+      // @include responsive1550 {
+      //   width: 1432px;
+      // }
+      .card {
+        width: 100%;
+        position: relative;
+        @include responsive768 {
+          width: 50%;
+        }
+        .image {
+          width: 100%;
+          border-radius: 20px;
+          img {
+            width: 100%;
+            border-radius: 20px;
+            @include responsive1550 {
+              width: 700px;
+              height: 360px;
+            }
+          }
+        }
+        .texts {
+          position: absolute;
+          top: 15%;
+          left: 20px;
+          @include responsive1200 {
+            top: 20%;
+            left: 25px;
+          }
+          p {
+            color: $white_color;
+            font-family: "RobotoMedium";
+            font-size: 8px;
+            line-height: 140%;
+            letter-spacing: 0.084px;
+            margin-bottom: 4px;
+            @include responsive400 {
+              font-size: 10px;
+              margin-bottom: 6px;
+            }
+            @include responsive450 {
+              font-size: 12px;
+              margin-bottom: 8px;
+            }
+            @include responsive500 {
+              font-size: 14px;
+              margin-bottom: 10px;
+            }
+            @include responsive600 {
+              font-size: 16px;
+              margin-bottom: 13px;
+            }
+            @include responsive768 {
+              font-size: 10px;
+              margin-bottom: 6px;
+            }
+            @include responsive860 {
+              font-size: 12px;
+              margin-bottom: 8px;
+            }
+            @include responsive992 {
+              font-size: 14px;
+              margin-bottom: 10px;
+            }
+            @include responsive1200 {
+              font-size: 16px;
+              margin-bottom: 13px;
+            }
+          }
+          h3 {
+            color: $white_color;
+            font-family: "RobotoMedium";
+            font-size: 16px;
+            line-height: 140%;
+            letter-spacing: 0.084px;
+            margin-bottom: 4px;
+            @include responsive400 {
+              font-size: 18px;
+              margin-bottom: 6px;
+            }
+            @include responsive450 {
+              font-size: 22px;
+              margin-bottom: 8px;
+            }
+            @include responsive500 {
+              font-size: 24px;
+              margin-bottom: 10px;
+            }
+            @include responsive600 {
+              font-size: 26px;
+              margin-bottom: 13px;
+            }
+            @include responsive700 {
+              font-size: 30px;
+            }
+            @include responsive768 {
+              font-size: 18px;
+              margin-bottom: 6px;
+            }
+            @include responsive860 {
+              font-size: 22px;
+              margin-bottom: 8px;
+            }
+            @include responsive992 {
+              font-size: 24px;
+              margin-bottom: 10px;
+            }
+            @include responsive1200 {
+              font-size: 26px;
+              margin-bottom: 13px;
+            }
+            @include responsive1300 {
+              font-size: 30px;
+            }
+            @include responsive1440 {
+              font-size: 36px;
+            }
+          }
+          h2 {
+            color: #fff;
+            font-family: "RobotoMedium";
+            font-size: 16px;
+            line-height: 140%;
+            letter-spacing: 0.084px;
+            margin-bottom: 14px;
+            @include responsive400 {
+              font-size: 18px;
+              margin-bottom: 16px;
+            }
+            @include responsive450 {
+              font-size: 22px;
+              margin-bottom: 18px;
+            }
+            @include responsive500 {
+              font-size: 24px;
+              margin-bottom: 20px;
+            }
+            @include responsive600 {
+              font-size: 26px;
+              margin-bottom: 22px;
+            }
+            @include responsive700 {
+              font-size: 30px;
+            }
+            @include responsive768 {
+              font-size: 18px;
+              margin-bottom: 16px;
+            }
+            @include responsive860 {
+              font-size: 22px;
+              margin-bottom: 18px;
+            }
+            @include responsive992 {
+              font-size: 24px;
+              margin-bottom: 20px;
+            }
+            @include responsive1200 {
+              font-size: 26px;
+              margin-bottom: 22px;
+            }
+            @include responsive1300 {
+              font-size: 30px;
+              margin-bottom: 26px;
+            }
+            @include responsive1440 {
+              font-size: 36px;
+              margin-bottom: 32px;
+            }
+          }
+          a {
+            border-radius: 3px;
+            border: 0.6px solid $white_color;
+            color: $white_color;
+            text-align: center;
+            font-family: "RobotoMedium";
+            font-size: 9px;
+            line-height: 130%;
+            padding: 8px 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            &:hover {
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+            @include responsive400 {
+              font-size: 11px;
+            }
+            @include responsive450 {
+              font-size: 13px;
+            }
+            @include responsive500 {
+              font-size: 15px;
+            }
+            @include responsive600 {
+              font-size: 16px;
+            }
+            @include responsive768 {
+              font-size: 11px;
+            }
+            @include responsive860 {
+              font-size: 13px;
+            }
+            @include responsive992 {
+              font-size: 15px;
+            }
+            @include responsive1200 {
+              font-size: 16px;
+              padding: 10px 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

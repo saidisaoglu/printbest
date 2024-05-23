@@ -1,0 +1,164 @@
+@import "../../../VariableElements/Responsive.scss";
+@import "../../../VariableElements/Color.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../../FontFamily/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../../../FontFamily/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url(../../../FontFamily/Roboto/Roboto-Medium.ttf);
+}
+
+.otherServices {
+  margin-top: 40px;
+  .otherServicesText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 37px;
+    gap: 20px;
+    @include responsive768 {
+      margin-bottom: 44px;
+    }
+    p {
+      color: $black_color;
+      font-family: "RobotoMedium";
+      font-size: 18px;
+      line-height: normal;
+      text-align: center;
+      @include responsive768 {
+        text-align: start;
+        font-size: 20px;
+      }
+      @include responsive860 {
+        font-size: 24px;
+      }
+      @include responsive992 {
+        width: 700px;
+        font-size: 36px;
+      }
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      width: 100px;
+      height: 40px;
+      padding: 11px 8px;
+      border-radius: 3px;
+      border: 0.7px solid #bdbdbd;
+      color: $black_color;
+      font-family: "Roboto";
+      font-size: 11px;
+      line-height: 140%;
+      letter-spacing: 0.136px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      @include responsive768 {
+        font-size: 14px;
+        width: 138px;
+        height: 50px;
+      }
+      @include responsive992 {
+        font-size: 16px;
+        width: 148px;
+        height: 54px;
+      }
+    }
+  }
+  .otherServicesImages {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    @include responsive992 {
+      gap: 55px;
+      margin-bottom: 100px;
+    }
+    @include responsive1200 {
+      width: 1050px;
+      gap: 60px;
+    }
+    @include responsive1440 {
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 100px;
+    }
+    @include responsive1800 {
+      width: 1600px;
+    }
+    li {
+      position: relative;
+      div {
+        width: 280px;
+        height: 261px;
+        border-radius: 15px;
+        cursor: pointer;
+        overflow: hidden;
+        @include responsive1200 {
+          width: 300px;
+          height: 300px;
+          margin-bottom: 10px;
+        }
+        @include responsive1440 {
+          width: 380px;
+          height: 380px;
+        }
+        img {
+          width: 100%;
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          @include responsive1200 {
+            height: 300px;
+          }
+          @include responsive1440 {
+            height: 380px;
+          }
+        }
+        &:hover img {
+          transform: scale(1.2);
+        }
+      }
+      a {
+        position: absolute;
+        width: 154px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        background-color: #022b9e;
+        color: $white_color;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 0;
+        font-family: "RobotoMedium";
+        font-size: 16px;
+        line-height: 110%;
+        @include responsive992 {
+          bottom: -40px;
+          left: 0;
+          transform: translateX(0);
+          border-radius: 0;
+          padding: 0;
+          background-color: unset;
+          text-align: start;
+          color: $black_color;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
