@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Companies from "../Components/Companies/Companies";
 import HomePage from "../Components/HomePage/HomePage";
 import Portfolio from "../Components/Portfolio/Portfolio";
-import Services from "../Components/Services/services";
 import Contact from "../Components/Contact/Contact";
 import NavbarInSameParts from "../Components/SameParts/Navbar/Navbar";
 import MainInSameParts from "../Components/SameParts/Main/MainInSameParts";
@@ -17,6 +16,14 @@ import Login from "../Components/Login/Login";
 import MyAccount from "../Components/AboutUsers/MyAccount";
 import Orders from "../Components/AboutUsers/Orders";
 import MyOrder from "../Components/AboutUsers/MyOrder";
+import LeftAside from "../Admin/LeftAside/LeftAside";
+import AdminNavbar from "../Admin/Navbar/AdminNavbar";
+import CorrectionOfInformation from "../Admin/Home/CorrectionOfInformation";
+import AboutUs from "../Admin/Home/AboutUs";
+import Partners from "../Admin/Home/Partners";
+import EditPage from "../Admin/Services/EditPage";
+import AddService from "../Admin/Services/AddService";
+import ServicesAdmin from "../Admin/Services/ServicesAdmin";
 
 export default function RouterPart() {
   const [hidden, setHidden] = useState(true);
@@ -28,11 +35,7 @@ export default function RouterPart() {
   const location = useLocation();
 
   const handleLoginWindow = () => {
-    if (loginWindow) {
-      setLoginWindow(false);
-    } else {
-      setLoginWindow(true);
-    }
+    setLoginWindow(!loginWindow);
   };
 
   const handleLogin = () => {
@@ -59,12 +62,35 @@ export default function RouterPart() {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (loginWindow) {
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflowY = "auto";
-    }
+    document.body.style.overflowY = loginWindow ? "hidden" : "auto";
   }, [loginWindow]);
+
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
+  if (isAdminRoute) {
+    return (
+      <section className={styles.adminContainer}>
+        <AdminNavbar />
+        <LeftAside />
+        <div className={styles.adminElement}>
+          <Routes>
+            <Route
+              path="/admin/home/correction"
+              element={<CorrectionOfInformation />}
+            />
+            <Route path="/admin/home/aboutus" element={<AboutUs />} />
+            <Route path="/admin/home/partners" element={<Partners />} />
+            <Route path="/admin/services/editpage" element={<EditPage />} />
+            <Route path="/admin/services/addservice" element={<AddService />} />
+            <Route
+              path="/admin/services/services"
+              element={<ServicesAdmin />}
+            />
+          </Routes>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={styles.container}>
@@ -98,6 +124,7 @@ export default function RouterPart() {
           <Route path="/account" element={<MyAccount />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/order" element={<MyOrder />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </div>
       {hidden && <MainInSameParts />}

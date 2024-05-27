@@ -12,6 +12,10 @@ const initialState = {
     quantity: "",
     message: "",
   },
+  partners:{
+    name:"",
+    img:""
+  }
 };
 export const stateSlice = createSlice({
   name: "state",
@@ -23,7 +27,10 @@ export const stateSlice = createSlice({
     setProductFormData: (state, action) => {
       state.productFormData = { ...state.productFormData, ...action.payload };
     },
+    setPartners: (state, action) => {
+      state.partners = { ...state.partners, ...action.payload };
+    },
   },
 });
 export default stateSlice.reducer;
-export const { setuserFormData, setProductFormData } = stateSlice.actions;
+export const { setuserFormData, setProductFormData,setPartners } = stateSlice.actions;
