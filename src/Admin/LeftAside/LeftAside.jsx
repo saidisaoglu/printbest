@@ -64,7 +64,7 @@ export default function LeftAside() {
                     style={buttonStyle}
                     onClick={() => setActiveLink("/admin/home/partners")}
                   >
-                    Partnyorlar{" "}
+                    Partnyorlar
                     {activeLink === "/admin/home/partners" && (
                       <img src={ActivePage} alt="Active Page" />
                     )}
@@ -84,7 +84,7 @@ export default function LeftAside() {
                 <Accordion.Header>Xidmətlər</Accordion.Header>
                 <Accordion.Body style={accordionBodyStyle}>
                   <Link
-                    to="/admin/services/editpage"
+                    to="/admin/services/editservicespage"
                     style={buttonStyle}
                     onClick={() => setActiveLink("/admin/services/editpage")}
                   >
@@ -103,7 +103,8 @@ export default function LeftAside() {
                       <img src={ActivePage} alt="Active Page" />
                     )}
                   </Link>
-                  <Link to={"/admin/services/services"}
+                  <Link
+                    to={"/admin/services/services"}
                     style={buttonStyle}
                     onClick={() => setActiveLink("/admin/services/services")}
                   >
@@ -126,7 +127,8 @@ export default function LeftAside() {
               <Accordion.Item eventKey="2">
                 <Accordion.Header>Portfolio</Accordion.Header>
                 <Accordion.Body style={accordionBodyStyle}>
-                  <button
+                  <Link
+                    to={"/admin/portfolio/editportfolio"}
                     style={buttonStyle}
                     onClick={() => setActiveLink("/admin/portfolio/editpage")}
                   >
@@ -134,7 +136,7 @@ export default function LeftAside() {
                     {activeLink === "/admin/portfolio/editpage" && (
                       <img src={ActivePage} alt="Active Page" />
                     )}
-                  </button>
+                  </Link>
                   <button
                     style={buttonStyle}
                     onClick={() =>

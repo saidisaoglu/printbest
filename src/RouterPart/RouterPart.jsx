@@ -21,9 +21,10 @@ import AdminNavbar from "../Admin/Navbar/AdminNavbar";
 import CorrectionOfInformation from "../Admin/Home/CorrectionOfInformation";
 import AboutUs from "../Admin/Home/AboutUs";
 import Partners from "../Admin/Home/Partners";
-import EditPage from "../Admin/Services/EditPage";
 import AddService from "../Admin/Services/AddService";
 import ServicesAdmin from "../Admin/Services/ServicesAdmin";
+import EditPortfolioPage from "../Admin/PortfolioAdmin/EditPortfolioPage";
+import EditServicesPage from "../Admin/Services/EditServicesPage";
 
 export default function RouterPart() {
   const [hidden, setHidden] = useState(true);
@@ -80,8 +81,9 @@ export default function RouterPart() {
             />
             <Route path="/admin/home/aboutus" element={<AboutUs />} />
             <Route path="/admin/home/partners" element={<Partners />} />
-            <Route path="/admin/services/editpage" element={<EditPage />} />
+            <Route path="/admin/services/editservicespage" element={<EditServicesPage />} />
             <Route path="/admin/services/addservice" element={<AddService />} />
+            <Route path="/admin/portfolio/editportfolio" element={<EditPortfolioPage />} />
             <Route
               path="/admin/services/services"
               element={<ServicesAdmin />}

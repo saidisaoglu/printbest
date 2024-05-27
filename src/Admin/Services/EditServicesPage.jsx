@@ -1,6 +1,6 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-export default function EditPage() {
+export default function EditServicesPage() {
   const inputHead = {
     paddingBottom: "10px",
     display: "block",

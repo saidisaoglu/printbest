@@ -1,9 +1,13 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import AddButton from "../../Images/PlusIcon.svg";
 
 export default function AddService() {
   return (
-    <section className="editPanel">
+    <section
+      className="editPanel"
+      style={{ display: "flex", flexDirection: "column", gap: "40px" }}
+    >
       <h4>
         <b>Xidmət | Xidmət əlavə et</b>
       </h4>
@@ -61,6 +65,29 @@ export default function AddService() {
             autoComplete="off"
           />
         </FloatingLabel>
+      </div>
+      <div style={{ display: "flex", gap: "15px", flexDirection: "column" }}>
+        <b>
+          Xidmətin qiymətini və sayını daxil edin <img src={AddButton} alt="" />
+        </b>
+        <div style={{ display: "flex", gap: "15px" }}>
+          <FloatingLabel
+            style={{ flex: 1 }}
+            controlId="floatingInput"
+            label="Ədəd"
+            className="mb-3"
+          >
+            <Form.Control type="text" placeholder="name@example.com" id="En" />
+          </FloatingLabel>
+          <FloatingLabel
+            style={{ flex: 1 }}
+            controlId="floatingInput"
+            label="Qiymət"
+            className="mb-3"
+          >
+            <Form.Control type="text" placeholder="name@example.com" id="En" />
+          </FloatingLabel>
+        </div>
       </div>
     </section>
   );
